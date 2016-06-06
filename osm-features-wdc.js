@@ -25,7 +25,7 @@
         }];
 
         var tableInfo = {
-            id: "osm-features",
+            id: "osm_features",
             alias: "OpenStreetMap Features",
             columns: cols
         };
