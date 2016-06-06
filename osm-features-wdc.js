@@ -34,7 +34,7 @@
     };
 
     myConnector.getData = function(table, doneCallback) {
-        var user_selection = tableau.connectionData.split("|"),
+        var user_selection = JSON.parse(tableau.connectionData),
 			feat_type = user_selection[0],
             bounds = user_selection[1].replace(/['"]+/g, ""),
 			id = 0,
@@ -62,7 +62,6 @@
                     "lat": lat,
                     "lon": lon
                 });
-
             }
 
             table.appendRows(tableData);
@@ -82,12 +81,17 @@
 
         $("#submitButton").click(function() {
             if ($("#feature-button-text").text() === "Select a feature") {
-                alert("Select a feature from the dropdown menu.")
-// Note to self: Add validation
+                alert("Select a feature from the dropdown menu.");
+                return;
+            } else if (typeof $("#map").attr("latlon") === "undefined") {
+                alert("Select an area on the map.");
+                return;
             }
 
+            var connectDataObj = [$("#feature-button-text").text(), $("#map").attr("latlon")];
+
             tableau.connectionName = "OSM Features"; 
-			tableau.connectionData = $("#feature-button-text").text() + "|" + $("#map").attr("latlon");
+			tableau.connectionData = JSON.stringify(connectDataObj);
             console.log($("#map").attr("latlon"));
             tableau.submit(); 
         });

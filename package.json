@@ -2,10 +2,6 @@
   "name": "osm-features-wdc",
   "version": "1.0.0",
   "description": "Get data about OpenStreetMap features in an area",
-  "main": "leaflet.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "tableau-wdc"
   ],

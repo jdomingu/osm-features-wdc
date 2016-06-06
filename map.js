@@ -1,11 +1,30 @@
 // Leaflet map code
 $(document).ready(function() {
     var currentLayer,
-        currentBounds;
+        currentBounds,
+        mapCenterLat = 39.8282, // Default location settings
+        mapCenterLon = -98.5795,
+        mapZoom = 4;
+
+    if('geolocation' in navigator){
+		var options = {
+		   enableHighAccuracy: false, 
+		};
+
+		navigator.geolocation.getCurrentPosition(function (pos) {
+		   mapCenterLat = pos.coords.latitude;
+		   mapCenterLon = pos.coords.longitude;
+           mapZoom = 12;
+           console.log("loc: " + mapCenterLat + ", " + mapCenterLon);
+           map.setView(new L.LatLng(mapCenterLat, mapCenterLon), mapZoom);
+		}, function (err) {
+           console.log("Could not get your location:" + err);
+        }, { enableHighAccuracy: false }); 
+    }
 
     var osmUrl = 'http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg',
         osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: "Map data &copy; OpenStreetMap contributors"}),
-        map = new L.Map('map', {layers: [osm], center: new L.LatLng(39.8282, -98.5795), zoom: 4});
+        map = new L.Map('map', {layers: [osm], center: new L.LatLng(mapCenterLat, mapCenterLon), zoom: mapZoom});
 
     var drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
@@ -19,6 +38,7 @@ $(document).ready(function() {
         },
         edit: false 
     });
+
     map.addControl(drawControl);
 
     // Only allow one layer at a time

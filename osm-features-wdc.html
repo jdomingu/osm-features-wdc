@@ -23,7 +23,7 @@
                 <h4 class="text-center">Get OpenStreetMap Data for a Feature</h4>
 				<br>
 
-				<div class="dropdown" id="dropdown-container">
+                <div class="dropdown" id="dropdown-container" style="z-index:1001;">
 					<button class="btn btn-default dropdown-toggle" type="button" id="feature-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						<span id="feature-button-text">Select a feature</span>
 						<span class="caret"></span>
@@ -37,20 +37,16 @@
                         <li><a href="#">cafe</a></li>
                         <li><a href="#">cinema</a></li>
                         <li><a href="#">fire_station</a></li>
-                        <li><a href="#">fuel (gas stop)</a></li>
-                        <li><a href="#">hospital</a></li>
+                        <li><a href="#">fuel</a></li>
                         <li><a href="#">library</a></li>
-                        <li><a href="#">photo_booth</a></li>
-                        <li><a href="#">police</a></li>
                         <li><a href="#">post_box</a></li>
                         <li><a href="#">restaurant</a></li>
                         <li><a href="#">school</a></li>
                         <li><a href="#">theatre</a></li>
-                        <li><a href="#">bar</a></li>
-						<li><a href="#">cafe</a></li>
-						<li><a href="#">restaurant</a></li>
 					</ul>
 				</div>
+                <br />
+                Click the rectangle icon to select an area for which you want data.
                 <div id="map" style="width:100%; height: 300px; margin: 10px 0px;"></div>
                 <button type = "button" id = "submitButton" class = "btn btn-success" style = "margin: 10px 0px;">Get Feature Data!</button>
             </div>
