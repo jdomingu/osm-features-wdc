@@ -17,10 +17,12 @@
         }, {
             id: "lat",
             alias: "latitude",
+            columnRole: "dimension",
             dataType: tableau.dataTypeEnum.float
         }, {
             id: "lon",
             alias: "longitude",
+            columnRole: "dimension",
             dataType: tableau.dataTypeEnum.float
         }];
 
