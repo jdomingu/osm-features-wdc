@@ -1,17 +1,18 @@
 <html>
+
 <head>
     <title>OSM Features Connector</title>
     <meta http-equiv="Cache-Control" content="no-store" />
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css" />
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
-  
+
     <script src="https://connectors.tableau.com/libs/tableauwdc-2.0.0-beta.js" type="text/javascript"></script>
     <script src="osm-features-wdc.js" type="text/javascript"></script>
 </head>
@@ -21,14 +22,14 @@
         <div class="row vertical-center-row">
             <div class="">
                 <h4 class="text-center">Get OpenStreetMap Data for a Feature</h4>
-				<br>
+                <br>
 
                 <div class="dropdown" id="dropdown-container" style="z-index:1001;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="feature-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="feature-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						<span id="feature-button-text">Select a feature</span>
 						<span class="caret"></span>
 					</button>
-					<ul class="dropdown-menu" id="feature-menu">
+                    <ul class="dropdown-menu" id="feature-menu">
                         <li><a href="#">atm</a></li>
                         <li><a href="#">bank</a></li>
                         <li><a href="#">bar</a></li>
@@ -43,16 +44,16 @@
                         <li><a href="#">restaurant</a></li>
                         <li><a href="#">school</a></li>
                         <li><a href="#">theatre</a></li>
-					</ul>
-				</div>
-                <br />
-                Click the rectangle icon to select an area for which you want data.
+                    </ul>
+                </div>
+                <br /> Click the rectangle icon to select an area for which you want data.
                 <div id="map" style="width:100%; height: 300px; margin: 10px 0px;"></div>
-                <button type = "button" id = "submitButton" class = "btn btn-success" style = "margin: 10px 0px;">Get Feature Data!</button>
+                <button type="button" id="submitButton" class="btn btn-success" style="margin: 10px 0px;">Get Feature Data!</button>
             </div>
         </div>
-        
+
     </div>
     <script src="map.js"></script>
 </body>
+
 </html>
