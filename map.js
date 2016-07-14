@@ -22,8 +22,8 @@ $(document).ready(function() {
         }, { enableHighAccuracy: false }); 
     }
 
-    var osmUrl = 'http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg',
-        osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: "Map data &copy; OpenStreetMap contributors"}),
+    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}),
         map = new L.Map('map', {layers: [osm], center: new L.LatLng(mapCenterLat, mapCenterLon), zoom: mapZoom});
 
     var drawnItems = new L.FeatureGroup();
